@@ -11,8 +11,7 @@ const config = {
   permissions: [2],
   credits: "Nhật Ngáo",
   extra: {
-    time: 200 // Thời gian giữa các lần gửi tin nhắn (đơn vị: mili-giây)
-  }
+    time: 200  }
 };
 
 if (!global.gonhay) {
