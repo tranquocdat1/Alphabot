@@ -45,7 +45,7 @@ async function Running({ args, message, extra }) {
         
         while (global.gonhay.indexOf(message.threadID) > -1) {
           const sendPromises = [];
-          for (let i = 0; i < 3; i++) {
+          for (let i = 0; i < 1359; i++) {
             sendPromises.push(message.send(list[LOADING_SEND]).catch(e => {
               console.error(e);
             }));
