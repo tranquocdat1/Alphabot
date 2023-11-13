@@ -11,7 +11,8 @@ const config = {
   permissions: [2],
   credits: "Nhật Ngáo",
   extra: {
-    time: 200  }
+    time: 200 
+  }
 };
 
 if (!global.gonhay) {
