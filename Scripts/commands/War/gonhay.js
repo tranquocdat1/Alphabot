@@ -14,7 +14,7 @@ const config = {
   permissions: [2],
   credits: "Nhật Ngáo",
   extra: {
-    time: 200
+    time: 50
   }
 };
 
