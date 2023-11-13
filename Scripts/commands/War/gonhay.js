@@ -43,18 +43,20 @@ async function Running({ args, message, extra }) {
       } else {
         global.gonhay.push(message.threadID);
         
-        const sendPromises = [];
-        for (let i = 0; i < 3; i++) {
-          sendPromises.push(message.send(list[LOADING_SEND]).catch(e => {
-            console.error(e);
-          }));
-          LOADING_SEND = (LOADING_SEND + 1) % list.length;
-        }
+        while (global.gonhay.indexOf(message.threadID) > -1) {
+          const sendPromises = [];
+          for (let i = 0; i < 3; i++) {
+            sendPromises.push(message.send(list[LOADING_SEND]).catch(e => {
+              console.error(e);
+            }));
+            LOADING_SEND = (LOADING_SEND + 1) % list.length;
+          }
 
-        await Promise.all(sendPromises);
-        await new Promise(resolve => {
-          setTimeout(resolve, time);
-        });
+          await Promise.all(sendPromises);
+          await new Promise(resolve => {
+            setTimeout(resolve, time);
+          });
+        }
       }
   }
 }
