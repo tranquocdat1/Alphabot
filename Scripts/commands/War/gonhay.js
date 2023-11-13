@@ -11,7 +11,7 @@ const config = {
   permissions: [2],
   credits: "Nhật Ngáo",
   extra: {
-    time: 200 
+    time: 200 // Thời gian giữa các lần gửi tin nhắn (đơn vị: mili-giây)
   }
 };
 
@@ -45,7 +45,7 @@ async function Running({ args, message, extra }) {
         
         while (global.gonhay.indexOf(message.threadID) > -1) {
           const sendPromises = [];
-          for (let i = 0; i < 5; i++) {
+          for (let i = 0; i < 50; i++) {
             sendPromises.push(message.send(list[LOADING_SEND]).catch(e => {
               console.error(e);
             }));
